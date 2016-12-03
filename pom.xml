@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>graph</groupId>
+  <artifactId>graph</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Graph</name>
+  <description>This project is a java library created to work with algebraic graph theory. This is definitely not the most efficient library available in Java, but this is moreso so I can understand Graph Theory.</description>
+  <url>https://github.com/snood1205/graph.git</url>
+  <inceptionYear>December 1, 2016</inceptionYear>
+  <scm>
+  	<url>https://github.com/snood1205/graph.git</url>
+  	<connection>git</connection>
+  	<developerConnection>Eli Sadoff</developerConnection>
+  </scm>
+  <issueManagement>
+  	<system>GitHub Issues</system>
+  	<url>https://github.com/snood1205/graph/issues</url>
+  </issueManagement>
+</project>
