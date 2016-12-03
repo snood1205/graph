@@ -1,15 +1,31 @@
+
+package graph;
+
+/**
+ * Vertex
+ * 
+ * @author Eli Sadoff
+ *
+ */
 public class Vertex {
 
     private int    degree;
     private Edge[] edges;
     private String name;
 
+    /**
+     * @param name
+     * @param edges
+     */
     public Vertex (String name, Edge... edges) {
         this.name = name;
         this.edges = edges;
         this.degree = edges.length;
     }
 
+    /**
+     * @param name
+     */
     public Vertex (String name) {
         this.name = name;
         this.edges = new Edge[0];
@@ -22,7 +38,7 @@ public class Vertex {
      * @return degree as int.
      */
     public int getDegree () {
-        return degree;
+        return this.degree;
     }
 
     /**
@@ -41,7 +57,7 @@ public class Vertex {
      * @return edges as Edge[].
      */
     public Edge[] getEdges () {
-        return edges;
+        return this.edges;
     }
 
     /**
@@ -52,7 +68,7 @@ public class Vertex {
      * @return edges at index as Edge.
      */
     public Edge getEdges (int index) {
-        return edges[index];
+        return this.edges[index];
     }
 
     /**
@@ -83,7 +99,7 @@ public class Vertex {
      * @return name as String.
      */
     public String getName () {
-        return name;
+        return this.name;
     }
 
     /**
@@ -103,10 +119,7 @@ public class Vertex {
         if (!(o instanceof Vertex))
             return false;
         Vertex v = ((Vertex) o);
-        if (v.getDegree() == getDegree() && v.getName().equals(getName()))
-            return true;
-        else
-            return false;
+        return v.getDegree() == getDegree() && v.getName().equals(getName());
     }
 
     @Override
