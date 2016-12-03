@@ -89,6 +89,13 @@ public class Vertex {
         this.name = name;
     }
 
+    public boolean adjacent(Vertex v) {
+        for (Edge e : getEdges())
+            if (v.equals(e.getOtherVertex(this)))
+                return true;
+        return false;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)

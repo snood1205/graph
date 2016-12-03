@@ -11,7 +11,10 @@ public class Edge {
      * @param left the left-hand vertex
      * @param right the right-hand vertex
      */
-    public Edge(int directionality, Vertex left, Vertex right) {
+    public Edge(int directionality, Vertex left, Vertex right)
+        throws IllegalArgumentException {
+        if (left.equals(right))
+            throw new IllegalArgumentException("Edge cannot be stationary");
         this.directionality = directionality;
         this.left = left;
         this.right = right;
@@ -23,10 +26,8 @@ public class Edge {
      * @param left the left-hand vertex
      * @param right the right-hand vertex
      */
-    public Edge(Vertex left, Vertex right) {
-        this.directionality = 0;
-        this.left = left;
-        this.right = right;
+    public Edge(Vertex left, Vertex right) throws IllegalArgumentException {
+        this(0, left, right);
     }
 
     /**
@@ -120,6 +121,16 @@ public class Edge {
             return true;
         else
             return false;
+    }
+
+    public Vertex getOtherVertex(Vertex v)
+        throws IllegalArgumentException {
+        if (getRight().equals(v))
+            return getLeft();
+        if (getLeft().equals(v))
+            return getRight();
+        throw new IllegalArgumentException(
+                "The requested vertex is not in this edge");
     }
 
     @Override
